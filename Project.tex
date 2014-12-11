@@ -13,6 +13,8 @@
 \usepackage{listings}
 \usepackage{float}
 \usepackage{amsthm}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
 \theoremstyle{definition}
@@ -44,10 +46,19 @@ As the world draws closer to the era of quantum computing, there is a fear on th
 \hspace*{8pt} A couple of the properties hidden in the example above actually generalize to some important properties of linear codes of arbitrary length.  Let us state some key definitions before proceeding.        
 
 \begin{definition}
-A \textbf{linear code} of length n and rank k is a linear subspace, C, or $\mathbb{F}_{q}^{n}$, where $\mathbb{F}_{q}$ is the finite field on q elements. 
+A linear code of length n and rank k is a linear subspace C with $dim(C)=k$ of $\mathbb{F}_{q}^{n}$, where $\mathbb{F}_{q}$ is the finite field on q elements. 
 \end{definition}	
 
+\begin{definition}
+The distance between two codewords is the number of elements in which they differ.  The distance of a linear code is the minimum distance between two distinct codewords in the code.
+\end{definition}
 
+\hspace*{8pt} The example above is an example of the code $\{000,111\}$.  The codewords in this linear code are 000 and 111.  The number of bits in which these two codewords differ, the distance of the code, is 3.  A code $\{000,001,110,111\}$ does not have the same distance as $\{000,111\}$ because the distance is the \textbf{minimum} distance between two elements in the code.  In the case of the 4-codeword linear code above, that minimum distance is 1.  
 
+\hspace*{8pt} With respect to error-detecting, the amount of errors a code can detect is dependent on the distance of that code.  It is more straightforward to see that a code with distance $d$ can correct $d-1$ errors.  That is because, by the definition of distance, corrupting $d-1$ bits in a valid codeword will necessarily produce an invalid codeword.  Both sender and receiver know that it is an invalid codeword because they know what the bit strings contained in the code are.  That is why in the code $\{000,111\}$, with distance 3, we can detect up to $3-1 = 2$ errors.  
+
+\hspace*{8pt} With respect to error-correcting, the amount of errors a code can correct is also dependent on the distance of that code.  The amount of errors that a code with distance $d$ can correct is $\ceil[\bigcap]{\frac{d}{2}} - 1$.  The reason for this is that once $\frac{d}{2}$ bits are corrupted, there is an ambiguity when it comes to determining what the original, uncorrupted codeword is.  Hence, the code $\{000,111\}$, with distance 3, can correct $\ceil[\big]{\frac{3}{2}}-1 = 2-1 = 1$ error.
+
+\hspace*{8pt} Throughout the rest of the paper we will refer to a linear code of length $n$, dimension $k$, and distance $d$ as an [n,k,d] code.  
 \end{document}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.7.20)  11 DEC 2014 15:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.7.20)  11 DEC 2014 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,21 +492,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 51.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
+ [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
  (./Project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 69.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `Project.out' has not changed.
-(rerunfilecheck)             Checksum: 3E6D03A9E9E8EBA7BEDA999BFEC79B98;57.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
+(rerunfilecheck)             Checksum: 08AB05E94ECD60219B26EAB7390EE242;122.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 8598 strings out of 493485
- 130000 string characters out of 3143526
- 221128 words of memory out of 3000000
- 11783 multiletter control sequences out of 15000+200000
+ 8606 strings out of 493485
+ 130081 string characters out of 3143526
+ 222129 words of memory out of 3000000
+ 11784 multiletter control sequences out of 15000+200000
  45625 words of font info for 51 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,7n,38p,1373b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -522,10 +523,10 @@ pe1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
-Output written on Project.pdf (2 pages, 215530 bytes).
+Output written on Project.pdf (3 pages, 222835 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 17 words of extra memory for PDF output out of 10000 (max. 10000000)
 

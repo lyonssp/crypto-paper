@@ -126,9 +126,10 @@ The only remaining obstacle to a public-key cryptosystem based on the hardness o
 	\item Then $cP^{-1} = mSG + zP^{-1}$ 
 	\item Because $zP^{-1}$ has at most $t$ ones, the distance between $mSG$ and ${\hat c}$ is at most $t$.  The decoding algorithm for C can thus correct the introduced error and decode $mSG$ to produce ${\hat m} = mS$.
 	\item Alice then computes $m = {\hat m}S^{-1}$
-	
-	
-	
 	\end{enumerate}
+\section{Extending the State-of-the-art}
+	\paragraph{} The place where this system needs the most extension is in quantum algorithms that could eliminate the hardness of the problem of linear decoding.  The reason that this cryptosystem seems to be of value in the post-quantum world is because the field of quantum cryptography is relatively unexplored.  Shor's algorithm is not one of many quantum algorithms, it's one of few.  The fact that Shor's algorithm does not break the McEliece system has nothing to do with any special security that the McEliece system possesses, it is simply not a system that is built around a problem whose hardness has been cracked yet.  There isn't much literature in the space of quantum decoding of linear error-correcting codes.
+	\paragraph{} The other place where this system needs work is in the implementation details of the system.  The major weakness of this cryptosystem is that it could not currently work in place of the public-key cryptosystems we use today; it is simply too heavy-weight and slow.  There is existing work that attempts to reduce the key sizes necessary in this system [insert citation], but additional research shows that, in the post-quantum world where this system would actually see use, key size needs to increase significantly in order for McEliece to continue to be effective.
+
 
 \end{document}

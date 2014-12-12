@@ -118,5 +118,17 @@ The only remaining obstacle to a public-key cryptosystem based on the hardness o
 	\item Alice computes $m = {\hat m}S^{-1}$
 	\end{enumerate}
 
+	\subsection{Proof of Decryption}
+	\begin{enumerate}
+	\item Alice computes ${\hat c} = cP^{-1}$ after receiving $c$
+	\item $cP^{-1} = m{\hat G}P^{-1} + zP^{-1}$
+	\item Since ${\hat G} = SGP$, $m{\hat G}P^{-1} = mSG$
+	\item Then $cP^{-1} = mSG + zP^{-1}$ 
+	\item Because $zP^{-1}$ has at most $t$ ones, the distance between $mSG$ and ${\hat c}$ is at most $t$.  The decoding algorithm for C can thus correct the introduced error and decode $mSG$ to produce ${\hat m} = mS$.
+	\item Alice then computes $m = {\hat m}S^{-1}$
+	
+	
+	
+	\end{enumerate}
 
 \end{document}

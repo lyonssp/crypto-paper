@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{times}
 \usepackage{url}
 \usepackage{hyperref}
@@ -127,9 +127,6 @@ The only remaining obstacle to a public-key cryptosystem based on the hardness o
 	\item Because $zP^{-1}$ has at most $t$ ones, the distance between $mSG$ and ${\hat c}$ is at most $t$.  The decoding algorithm for C can thus correct the introduced error and decode $mSG$ to produce ${\hat m} = mS$.
 	\item Alice then computes $m = {\hat m}S^{-1}$
 	\end{enumerate}
-\section{Extending the State-of-the-art}
-	\paragraph{} The place where this system needs the most extension is in quantum algorithms that could eliminate the hardness of the problem of linear decoding.  The reason that this cryptosystem seems to be of value in the post-quantum world is because the field of quantum cryptography is relatively unexplored.  Shor's algorithm is not one of many quantum algorithms, it's one of few.  The fact that Shor's algorithm does not break the McEliece system has nothing to do with any special security that the McEliece system possesses, it is simply not a system that is built around a problem whose hardness has been cracked yet.  There isn't much literature in the space of quantum decoding of linear error-correcting codes.
-	\paragraph{} The other place where this system needs work is in the implementation details of the system.  The major weakness of this cryptosystem is that it could not currently work in place of the public-key cryptosystems we use today; it is simply too heavy-weight and slow.  There is existing work that attempts to reduce the key sizes necessary in this system [insert citation], but additional research shows that, in the post-quantum world where this system would actually see use, key size needs to increase significantly in order for McEliece to continue to be effective.
 
 
 \section{Binary Goppa Codes}
@@ -141,5 +138,43 @@ A Binary Goppa code is characterized by a polynomial $p(x) \in GF(2^m)[x]$, wher
 
 \paragraph{}
 It can be shown that a general Binary Goppa code has minimum distance $t+1$. By placing additional constraints on $p(x)$, we can increase this lower bound to $2t+1$. The constraint required is that each root of $p(x)$ only has multiplicity one. By increasing the distance of our code, we are now free to increase the number of flipped bits in our noisy codeword.
+
+
+\section{Extending the State-of-the-art}
+\paragraph{} 
+The place where this system needs the most extension is in quantum algorithms that could eliminate the hardness of the problem of linear decoding. The reason that this cryptosystem seems to be of value in the post-quantum world is because the field of quantum cryptography is still relatively young. Quantum Fourier sampling currently doesn't provide the typical exponential speedup in linear code decoding. This is a positive result in the sense that it is a vote for the candidacy of the McEliece cryptosystem. Since quantum Fourier sampling embodies most (all?) quantum algorithms that provide an exponential speedup, one might therefore conjecture that we may never see quantum algorithms providing exponential speedup for the nearest codeword problem. 
+\paragraph{} 
+The other place where this system needs work is in the implementation details of the system.  The major weakness of this cryptosystem is that it could not currently work in place of the public-key cryptosystems we use today; it requires too much memory. There is existing work that attempts to reduce the key sizes necessary in this system, but additional research shows that, in the post-quantum world where this system would actually see use, key size needs to increase significantly in order for McEliece to continue to be effective.
+\section{Conclusion}
+\paragraph{}
+Most public-key cryptosystems are based on the use of a one-way function. In particular, inverting such a function is usually equivalent to the solution of a problem that is widely believed to be difficult, and has no known efficient classical algorithms. With the recent discovery of Shor's algorithm for period-finding, we now know that the most popular classical encryption schemes will become obsolete as soon as implementing Shor's algorithm becomes practical. 
+
+\paragraph{}
+However, there are many NP-Hard or NP-Complete problems that are not solved by Shor's algorithm or are easily expressible as a Hidden Subgroup Problem for which an efficient solution by quantum Fourier sampling exists. One example is the Nearest Codeword Problem. The natural development of a cryptosystem centered around this problem leads to the McEliece cryptosystem. 
+
+\paragraph{}
+We feel that the best way to continue improving McEliece as a cryptosystem is to perform research on attacking the problem of linear coding with quantum algorithms, as well as improving the system's memory footprint. In particular, we feel that the memory footprint is the largest barrier to adoption, which typically leads to more research being focused on the system. With widespread adoption, the McEliece cryptosystem will either improve or die quickly. But prompting such an adoption is roughly equivalent to constructing a quantum computer that threatens RSA, elliptic curve ElGamal, or making the memory footprint practical.
+
+\begin{thebibliography}{9}
+
+\bibitem{1}
+Elwyn R. Berlekamp, \emph{Goppa Codes}, IEEE Transactions on information theory, Vol. IT-19, No. 5, September 1973.
+\bibitem{2}
+Daniela Engelbert, Raphael Overbeck, Arthur Schmidt. \emph{A summary of McEliece-type cryptosystems and their security.} Journal of Mathematical Cryptology 1, 151–199. MR 2008h:94056.
+\bibitem{3}
+Daniel J. Bernstein. \emph{List decoding for binary Goppa codes}.
+\bibitem{4}
+Mohamed Sayed. \emph{Coset Decomposition Method for Decoding Linear Codes} International Journal of Algebra, Vol. 5, 2011, no. 28, 1395 - 1404.
+\bibitem{5}
+William E. Ryan and Shu Lin (2009). \emph{Channel Codes: Classical and Modern}. Cambridge University Press.
+\bibitem{6}
+Thomas M. Cover and Joy A. Thomas (1991). \emph{Elements of Information Theory}. John Wiley & Sons, Inc. 
+\bibitem{7}
+H. Dinh, C. Moore, A. Russell (17 August 2010). \emph{The McEliece Cryptosystem Resists Quantum Fourier Sampling Attacks}. arXiv:1008.2390 [cs.CR].
+\bibitem{8}
+Berlekamp, Elwyn R.; McEliece, Robert J.; Van Tilborg, Henk C.A. (1978). \emph{On the Inherent Intractability of Certain Coding Problems}. IEEE Transactions on Information Theory.
+\bibitem{9}
+Ellen Jochemsz (2002). \emph{Goppa Codes & the McEliece Cryptosystem}. 
+\end{thebibliography}
 
 \end{document}

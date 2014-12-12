@@ -131,4 +131,14 @@ The only remaining obstacle to a public-key cryptosystem based on the hardness o
 	
 	\end{enumerate}
 
+\section{Binary Goppa Codes}
+\paragraph{}
+The above description of the McEliece cryptosystem was entirely agnostic of the linear code used. However, one might guess that certain linear codes might be more amenable to use for concealing secret messages. In particular, a linear code with large distance would be desirable, as this property directly translates into the number of errors that can be corrected per message. The amount of flipped bits in the codeword is a rough indicator of how much one may conceal the message. Also, having a linear code that forces a brute-force attacker to examine a large number of possible codewords is desirable for obvious reasons. 
+
+\paragraph{}
+A Binary Goppa code is characterized by a polynomial $p(x) \in GF(2^m)[x]$, where we let $t = deg(p)$, as well as some subset $L$ of $GF(2^m)$ so that for any $l\in L$, $g(l) \not = 0$. Then the actual codewords are every vector $\vec{c}$ so that $\sum_{l\in L} c_i (x-l)^{-1} \equiv 0 (\mod p(x))$. 
+
+\paragraph{}
+It can be shown that a general Binary Goppa code has minimum distance $t+1$. By placing additional constraints on $p(x)$, we can increase this lower bound to $2t+1$. The constraint required is that each root of $p(x)$ only has multiplicity one. By increasing the distance of our code, we are now free to increase the number of flipped bits in our noisy codeword.
+
 \end{document}
